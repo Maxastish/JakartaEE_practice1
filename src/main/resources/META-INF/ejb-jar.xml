@@ -1,0 +1,12 @@
+<ejb-jar xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         version="4.0">
+
+    <enterprise-beans>
+        <session>
+            <ejb-name>StudentService</ejb-name>
+            <ejb-class>com.example.service.StudentService</ejb-class>
+            <session-type>Stateless</session-type>
+        </session>
+    </enterprise-beans>
+
+</ejb-jar>

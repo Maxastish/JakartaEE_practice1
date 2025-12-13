@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
+                                 http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
+             version="2.1">
+    <persistence-unit name="University" transaction-type="JTA">
+        <!-- указываем JNDI ресурс GlassFish (создайте jdbc/StudentsDS в консоли) -->
+        <jta-data-source>jdbc/University</jta-data-source>
+
+        <class>com.example.model.Student</class>
+        <class>com.example.model.Course</class>
+        <class>com.example.model.StudentCourse</class>
+        <class>com.example.model.StudentCourseId</class>
+
+        <properties>
+            <!-- опционально: настройка провайдера -->
+            <property name="javax.persistence.schema-generation.database.action" value="none"/>
+            <!-- показывать SQL в логах (удалить или выключить на проде) -->
+            <property name="eclipselink.logging.level" value="FINE"/>
+        </properties>
+    </persistence-unit>
+</persistence>
