@@ -5,7 +5,7 @@
                                  http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
              version="2.1">
     <persistence-unit name="University" transaction-type="JTA">
-        <!-- указываем JNDI ресурс GlassFish (создайте jdbc/StudentsDS в консоли) -->
+        <!-- указываем JNDI ресурс GlassFish -->
         <jta-data-source>jdbc/University</jta-data-source>
 
         <class>com.example.model.Student</class>
@@ -14,9 +14,9 @@
         <class>com.example.model.StudentCourseId</class>
 
         <properties>
-            <!-- опционально: настройка провайдера -->
+            <!-- настройка провайдера -->
             <property name="javax.persistence.schema-generation.database.action" value="none"/>
-            <!-- показывать SQL в логах (удалить или выключить на проде) -->
+            <!-- показывать SQL в логах -->
             <property name="eclipselink.logging.level" value="FINE"/>
         </properties>
     </persistence-unit>
